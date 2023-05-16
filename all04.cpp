@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	double megaMults = maxPerformance / 1000000.;
-	fprintf(stderr, "N %10.2lf\t", megaMults);
+	fprintf(stderr, "%10.2lf\t", megaMults);
 	double mmn = megaMults;
 
     // Tests SIMD mul
@@ -65,10 +65,10 @@ int main(int argc, char *argv[]) {
 	}
 
 	megaMults = maxPerformance / 1000000.;
-	fprintf(stderr, "S %10.2lf\t", megaMults);
+	fprintf(stderr, "%10.2lf\t", megaMults);
 	double mms = megaMults;
 	double speedup = mms/mmn;
-	fprintf(stderr, "(%6.2lf)\t", speedup);
+	fprintf(stderr, "%6.2lf\t", speedup);
 
     // Tests Non-SIMD mul + sum
 	maxPerformance = 0.;
@@ -82,7 +82,7 @@ int main(int argc, char *argv[]) {
 			maxPerformance = perf;
 	}
 	double megaMultAdds = maxPerformance / 1000000.;
-	fprintf(stderr, "N %10.2lf\t", megaMultAdds);
+	fprintf(stderr, "%10.2lf\t", megaMultAdds);
 	mmn = megaMultAdds;
 
     // Tests SIMD mul + sum
@@ -97,10 +97,10 @@ int main(int argc, char *argv[]) {
 	}
 
 	megaMultAdds = maxPerformance / 1000000.;
-	fprintf(stderr, "S %10.2lf\t", megaMultAdds);
+	fprintf(stderr, "%10.2lf\t", megaMultAdds);
 	mms = megaMultAdds;
 	speedup = mms/mmn;
-	fprintf(stderr, "(%6.2lf)\n", speedup);
+	fprintf(stderr, "%6.2lf\n", speedup);
 
 	return 0;
 }
